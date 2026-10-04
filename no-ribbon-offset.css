@@ -1,0 +1,8 @@
+/* Obsidian reserves 80px for the macOS traffic lights (8px + 80px on the
+   outer tab container, +15px from Underwater's inner padding). That only
+   makes sense when the 44px ribbon covers part of it. Shrink the reserve
+   when the ribbon is hidden, and always in pop-out windows (no ribbon). */
+body.mod-macos:not(.show-ribbon),
+body.mod-macos.is-popout-window {
+  --frame-left-space: 44px;
+}

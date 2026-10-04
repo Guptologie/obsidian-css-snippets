@@ -1,0 +1,38 @@
+/* Collapse sidebar tab headers to a 4px hover strip, expanding on hover
+   or keyboard focus so hidden headers don't leave a full-height gap.
+   Document tabs are unaffected; touch devices keep visible headers. */
+@media (hover: hover) {
+  body:not(.is-mobile) :is(.mod-left-split, .mod-right-split) .workspace-tab-header-container {
+    height: 4px;
+    min-height: 4px;
+    overflow: hidden;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-bottom: 0;
+    -webkit-app-region: no-drag;
+    opacity: 0;
+    transition: height 120ms ease, opacity 120ms ease;
+  }
+
+  body:not(.is-mobile) :is(.mod-left-split, .mod-right-split) .workspace-tab-header-container:is(:hover, :focus-within) {
+    height: var(--header-height);
+    opacity: 1;
+  }
+}
+
+/* Compact sidebar navigation controls and the Bookmarks list. */
+body:not(.is-mobile) :is(.mod-left-split, .mod-right-split) .nav-header {
+  padding: 0;
+}
+
+body:not(.is-mobile) :is(.mod-left-split, .mod-right-split) .workspace-leaf-content[data-type="bookmarks"] > .view-content {
+  padding-bottom: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body:not(.is-mobile) :is(.mod-left-split, .mod-right-split) .workspace-tab-header-container {
+    transition: none;
+  }
+}
