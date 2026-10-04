@@ -13,9 +13,11 @@ Copy either CSS file to `<vault>/.obsidian/snippets/`, then enable it under Sett
 
 In this local setup, the vault snippets directory is a symlink to this repository. Edits in either location update the same files. If styles do not refresh, toggle the snippet off and on. Git identity is configured locally as Ankur Gupta <rukna1000@gmail.com>.
 
-## Relationship to Compact Headers
+## Relationship to Better Headers
 
-The sidebar snippet changes appearance. The separate `compact-headers` plugin changes the JavaScript-enforced Bookmarks pane minimum to 100px. Either can be used independently.
+[Better Headers](https://github.com/Guptologie/compact-headers) (formerly Compact Headers) includes the sidebar hover and spacing styles from `sidebar-tabs-on-hover.css` starting in version 1.1.0. It adds independent left/right hover toggles, spacing controls, an optional 100px Bookmarks pane minimum, and sidebar visibility commands.
+
+When using Better Headers, disable **sidebar-tabs-on-hover** in Settings → Appearance → CSS snippets. Leaving it enabled overrides the plugin's per-sidebar controls. The standalone snippet remains available for users who do not want the plugin. `no-ribbon-offset.css` can remain enabled with either setup.
 
 ## Validation before distribution
 
